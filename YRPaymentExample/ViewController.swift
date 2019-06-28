@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         // Setting Credit Card position
         view.addSubview(card)
         card.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        card.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        card.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
 
         // Setting textFields position and size (can be done using storyboards)
         setupViews()

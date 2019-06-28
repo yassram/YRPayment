@@ -53,6 +53,7 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
         cardNumberLabel.unSelect()
         cardHolderNameLabel.unSelect()
         cardValidityLabel.unSelect()
+        cardCryptogramLabel.unSelect()
     }
 
     // MARK: - Card Strings
@@ -192,7 +193,7 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
 
     // MARK: - Labels
 
-    fileprivate let cardNumberLabel: UILabel = {
+    let cardNumberLabel: UILabel = {
         let lab = UILabel()
         lab.translatesAutoresizingMaskIntoConstraints = false
         lab.font = UIFont(name: "OCRAStd", size: 18)
@@ -208,7 +209,7 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
         return lab
     }()
 
-    fileprivate let cardHolderNameLabel: UILabel = {
+    let cardHolderNameLabel: UILabel = {
         let lab = UILabel()
         lab.translatesAutoresizingMaskIntoConstraints = false
         lab.font = UIFont(name: "OCRAStd", size: 14)
@@ -224,7 +225,7 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
         return lab
     }()
 
-    fileprivate let cardValidityLabel: UILabel = {
+    let cardValidityLabel: UILabel = {
         let lab = UILabel()
         lab.translatesAutoresizingMaskIntoConstraints = false
         lab.font = UIFont(name: "OCRAStd", size: 14)
@@ -240,7 +241,7 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
         return lab
     }()
 
-    fileprivate let cardCryptogramLabel: UILabel = {
+    let cardCryptogramLabel: UILabel = {
         let lab = UILabel()
         lab.translatesAutoresizingMaskIntoConstraints = false
         lab.font = UIFont(name: "OCRAStd", size: 14)
@@ -422,18 +423,20 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
         rot.duration = 0.6
         rot.timingFunction = CAMediaTimingFunction(name: timingFuncName)
         rot.autoreverses = false
+        rot.isRemovedOnCompletion = false
+        rot.fillMode = .forwards
         layer.add(rot, forKey: "transform")
     }
 
     public func animationDidStop(_: CAAnimation, finished _: Bool) {
         if !faceView.isHidden {
+            rotateCard(from: CGFloat.pi / 2, to: 0, timingFuncName: .easeOut)
             faceView.isHidden = true
             backView.isHidden = false
-            rotateCard(from: CGFloat.pi / 2, to: 0, timingFuncName: .easeOut)
         } else {
+            rotateCard(from: CGFloat.pi / 2, to: 0, timingFuncName: .easeOut)
             faceView.isHidden = false
             backView.isHidden = true
-            rotateCard(from: CGFloat.pi / 2, to: 0, timingFuncName: .easeOut)
         }
     }
 

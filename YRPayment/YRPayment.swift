@@ -20,6 +20,7 @@ public final class YRPayment: NSObject, UITextFieldDelegate {
         didSet {
             numberTextField.delegate = self
             numberTextField.keyboardType = .numberPad
+            numberTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
     }
 
@@ -27,6 +28,7 @@ public final class YRPayment: NSObject, UITextFieldDelegate {
         didSet {
             holderNameTextField.delegate = self
             holderNameTextField.keyboardType = .default
+            holderNameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
     }
 
@@ -34,6 +36,7 @@ public final class YRPayment: NSObject, UITextFieldDelegate {
         didSet {
             validityTextField.delegate = self
             validityTextField.keyboardType = .numbersAndPunctuation
+            validityTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
     }
 
@@ -41,6 +44,7 @@ public final class YRPayment: NSObject, UITextFieldDelegate {
         didSet {
             cryptogramTextField.delegate = self
             cryptogramTextField.keyboardType = .numberPad
+            cryptogramTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
     }
 
@@ -49,7 +53,7 @@ public final class YRPayment: NSObject, UITextFieldDelegate {
         self.flipOnClick = flipOnClick
     }
 
-    public func textFieldDidChangeSelection(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         if textField == numberTextField {
             creditCard.cardNumber = textField.text
             if !creditCard.isFace { creditCard.flip() }
@@ -68,14 +72,22 @@ public final class YRPayment: NSObject, UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         creditCard.unselectAll()
         if textField == numberTextField {
+            creditCard.cardNumberLabel.select()
             if !creditCard.isFace { creditCard.flip() }
         } else if textField == holderNameTextField {
+            creditCard.cardHolderNameLabel.select()
             if !creditCard.isFace { creditCard.flip() }
         } else if textField == validityTextField {
+            creditCard.cardValidityLabel.select()
             if !creditCard.isFace { creditCard.flip() }
         } else if textField == cryptogramTextField {
+            creditCard.cardCryptogramLabel.select()
             if creditCard.isFace { creditCard.flip() }
         }
+    }
+
+    public func textFieldDidEndEditing(_: UITextField) {
+        creditCard.unselectAll()
     }
 
     public func getCardNumber() -> String {
