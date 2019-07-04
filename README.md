@@ -17,7 +17,7 @@
 
 ## 🎬 Preview
 <p align="center">
-<img src="preview/preview1.gif" height="600">
+<img src="preview/preview1.gif" height="700">
 </p>
 
 ## 🌟 Features
@@ -84,14 +84,73 @@ payment.cryptogramTextField = cryptoTF
 <img src="preview/previewImg.png" height="400">
 </p>
 
+## 🔍 Extracting data from the credit card
+
+To extract data from the credit card :
+
+1. Credit card number :
+```swift
+payment.getCardNumber()
+```
+
+2. Credit card holder name :
+```swift
+payment.getCardHolderName()
+```
+
+3. Credit card validity :
+```swift
+payment.getCardValidity()
+```
+
+4. Credit card cryptogram
+```swift
+payment.getCardCryptogram()
+```
+
+## 🎨 Customization : (more features are coming soon)
+
+### 💳 Customizing the credit card type (Symbole):
+
+When creating your creditCard instance (as seen before 👆) MasterCard is default:
+```swift
+let card = YRPaymentCreditCard()
+```
+you can specify the symbole you want from the available types:
+```swift
+let card = YRPaymentCreditCard(type: .masterCard)
+```
+or specify a custom one by uploading your own image symbole:
+```swift
+let image = UIImage(named: "mySymboleImage")!
+let card = YRPaymentCreditCard(type: .custom(image))
+```
+<p align="center">
+  <img src="preview/visa_front.png" height="300">
+  <img src="preview/visa_back.png" height="300">
+</p>
+
+> **More types are coming soon**
+### 🕹 Enable/Disable flip on user tap:
+```swift
+// Enable
+payment.flipOnClick = true
+
+// Disable
+payment.flipOnClick = false
+```
+
 ## 🙏 Contributing
 This is an open source project, so feel free to contribute. How?
-- Open an <a href="https://github.com/Juanpe/YRPayment/issues/new"> issue</a>.
+- Open an <a href="https://github.com/YRPayment/issues/new"> issue</a>.
 - Send feedback via <a href="mailto:ramsserio@gmail.com">email</a>.
 - Propose your own fixes, suggestions and open a pull request with the changes.
 
 
 ## 📢 Mentions
+- https://www.cocoacontrols.com/controls/better-payment-user-experience-library-with-cool-animation-in-swift
+- https://github.com/vsouza/awesome-ios
+
 Did you mention `YRPayment` in your website, do you use it in your app ? send me a <a href="mailto:ramsserio@gmail.com">message</a> to be added in this section!
 <br>
 <br>
