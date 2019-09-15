@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "YRPayment"
-  spec.version      = "1.1"
+  spec.version      = "1.2"
   spec.summary      = "Better payment experience library in Swift."
 
   spec.description  = <<-DESC
