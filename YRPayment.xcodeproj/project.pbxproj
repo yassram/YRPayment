@@ -10,10 +10,7 @@
 		FB39D80E22BF69EE004DAE60 /* YRPaymentCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39D80D22BF69EE004DAE60 /* YRPaymentCreditCard.swift */; };
 		FB39D81022BF8236004DAE60 /* YRPayment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADEDB122BF646A00737BCE /* YRPayment.framework */; };
 		FB39D81122BF8236004DAE60 /* YRPayment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBADEDB122BF646A00737BCE /* YRPayment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FB39D81622C1BE70004DAE60 /* credit_card.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB39D81522C1BE70004DAE60 /* credit_card.ttf */; };
-		FB39D81922C1C036004DAE60 /* credit_card.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB39D81522C1BE70004DAE60 /* credit_card.ttf */; };
 		FB39D81B22C1C0B5004DAE60 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB39D81A22C1C0B5004DAE60 /* OCRAStd.otf */; };
-		FB39D81E22C1C209004DAE60 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB39D81A22C1C0B5004DAE60 /* OCRAStd.otf */; };
 		FB39D82022C485F9004DAE60 /* YRPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39D81F22C485F9004DAE60 /* YRPayment.swift */; };
 		FB39D82222C48B6C004DAE60 /* YRTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39D82122C48B6C004DAE60 /* YRTools.swift */; };
 		FBADEDB622BF646A00737BCE /* YRPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADEDB422BF646A00737BCE /* YRPayment.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		FB39D80D22BF69EE004DAE60 /* YRPaymentCreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YRPaymentCreditCard.swift; sourceTree = "<group>"; };
-		FB39D81522C1BE70004DAE60 /* credit_card.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = credit_card.ttf; sourceTree = "<group>"; };
 		FB39D81A22C1C0B5004DAE60 /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAStd.otf; sourceTree = "<group>"; };
 		FB39D81F22C485F9004DAE60 /* YRPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YRPayment.swift; sourceTree = "<group>"; };
 		FB39D82122C48B6C004DAE60 /* YRTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YRTools.swift; sourceTree = "<group>"; };
@@ -93,18 +89,9 @@
 		FB39D81722C1BE75004DAE60 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				FB39D81822C1BE80004DAE60 /* Fonts */,
+				FB39D81A22C1C0B5004DAE60 /* OCRAStd.otf */,
 			);
 			path = Ressources;
-			sourceTree = "<group>";
-		};
-		FB39D81822C1BE80004DAE60 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				FB39D81A22C1C0B5004DAE60 /* OCRAStd.otf */,
-				FB39D81522C1BE70004DAE60 /* credit_card.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FBADEDA722BF646900737BCE = {
@@ -246,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB39D81B22C1C0B5004DAE60 /* OCRAStd.otf in Resources */,
-				FB39D81622C1BE70004DAE60 /* credit_card.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +242,6 @@
 			files = (
 				FBADEDCD22BF64C600737BCE /* LaunchScreen.storyboard in Resources */,
 				FBADEDCA22BF64C600737BCE /* Assets.xcassets in Resources */,
-				FB39D81E22C1C209004DAE60 /* OCRAStd.otf in Resources */,
-				FB39D81922C1C036004DAE60 /* credit_card.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
