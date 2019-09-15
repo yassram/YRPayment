@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 
         // Setting textFields position and size (can be done using storyboards)
         setupViews()
-        print("hiiiii")
+
         // Linking textFields to Payment object
         payment.numberTextField = NumberTF
         payment.holderNameTextField = NameTF
