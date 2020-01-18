@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "YRPayment"
-  spec.version      = "1.0"
+  spec.version      = "1.3"
   spec.summary      = "Better payment experience library in Swift."
 
   spec.description  = <<-DESC
@@ -47,6 +47,10 @@ Better payment user experience library with cool animation in Swift.
 
   spec.source       = { :git => "https://github.com/yassram/YRPayment.git", :tag => "#{spec.version}" }
 
+
+  # ――― Ressources Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+
+  spec.resource_bundles = { 'fonts' => 'YRPayment/**/Resources/*.otf' }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   
