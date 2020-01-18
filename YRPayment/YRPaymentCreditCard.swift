@@ -192,8 +192,13 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
     }
 
     // MARK: - Labels
-
+    static var registerFonts: Void = {
+        let fontUrl = Bundle(url: Bundle(for: YRPaymentCreditCard.self).url(forResource: "fonts", withExtension: "bundle")!)?.url(forResource: "OCRAStd", withExtension: "otf")
+        try? UIFont.register(fontUrl: fontUrl)
+    }()
+    
     let cardNumberLabel: UILabel = {
+        _ = YRPaymentCreditCard.registerFonts
         let lab = UILabel()
         lab.translatesAutoresizingMaskIntoConstraints = false
         lab.font = UIFont(name: "OCRAStd", size: 18)
@@ -210,6 +215,7 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
     }()
 
     let cardHolderNameLabel: UILabel = {
+        _ = YRPaymentCreditCard.registerFonts
         let lab = UILabel()
         lab.translatesAutoresizingMaskIntoConstraints = false
         lab.font = UIFont(name: "OCRAStd", size: 14)
@@ -226,6 +232,7 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
     }()
 
     let cardValidityLabel: UILabel = {
+        _ = YRPaymentCreditCard.registerFonts
         let lab = UILabel()
         lab.translatesAutoresizingMaskIntoConstraints = false
         lab.font = UIFont(name: "OCRAStd", size: 14)
@@ -242,6 +249,7 @@ public final class YRPaymentCreditCard: UIView, CAAnimationDelegate {
     }()
 
     let cardCryptogramLabel: UILabel = {
+        _ = YRPaymentCreditCard.registerFonts
         let lab = UILabel()
         lab.translatesAutoresizingMaskIntoConstraints = false
         lab.font = UIFont(name: "OCRAStd", size: 14)

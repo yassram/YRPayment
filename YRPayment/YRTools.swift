@@ -34,3 +34,30 @@ public enum YRCreditCardType {
     case masterCard
     case custom(UIImage)
 }
+
+enum RegisterFontError: Error {
+    case invalidFontFile
+    case fontPathNotFound
+    case initFontError
+    case registerFailed
+}
+class GetBundle {}
+
+extension UIFont {
+    static func register(fontUrl: URL?) throws {
+        guard let resourceBundleURL = fontUrl else {
+            throw RegisterFontError.fontPathNotFound
+        }
+        guard let fontData = try? Data(contentsOf: resourceBundleURL),
+            let dataProvider = CGDataProvider(data: fontData as CFData) else {
+            throw RegisterFontError.invalidFontFile
+        }
+        guard let fontRef = CGFont(dataProvider) else {
+            throw RegisterFontError.initFontError
+        }
+        var errorRef: Unmanaged<CFError>? = nil
+        guard CTFontManagerRegisterGraphicsFont(fontRef, &errorRef) else   {
+            throw RegisterFontError.registerFailed
+        }
+    }
+}
